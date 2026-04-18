@@ -8,14 +8,14 @@ Proceso CineBoletos
 	
 	Mientras continuar = "S" o continuar = "s" Hacer
 		
-		pelicula <- seleccionarPelicula()
-		tipo <- seleccionarTipoBoleto()
+		seleccionarPelicula(pelicula)
+		seleccionarTipoBoleto(tipo)
 		
 		Escribir "Ingrese cantidad de boletos:"
 		Leer cantidad
 		
-		precio <- obtenerPrecio(tipo)
-		total <- calcularTotal(precio, cantidad)
+		obtenerPrecio(tipo, precio)
+		calcularTotal(precio, cantidad, total)
 		
 		mostrarFactura(pelicula, tipo, cantidad, precio, total)
 		
@@ -29,7 +29,7 @@ Proceso CineBoletos
 FinProceso
 
 
-SubProceso pelicula <- seleccionarPelicula()
+SubProceso seleccionarPelicula(pelicula)
 	
 	Definir opcion Como Entero
 	
@@ -45,7 +45,7 @@ SubProceso pelicula <- seleccionarPelicula()
 FinSubProceso
 
 
-SubProceso tipo <- seleccionarTipoBoleto()
+SubProceso seleccionarTipoBoleto(tipo)
 	
 	Definir opcion Como Entero
 	
@@ -61,7 +61,7 @@ SubProceso tipo <- seleccionarTipoBoleto()
 FinSubProceso
 
 
-SubProceso precio <- obtenerPrecio(tipo)
+SubProceso obtenerPrecio(tipo, precio)
 	
 	Segun tipo Hacer
 		1:
@@ -77,7 +77,7 @@ SubProceso precio <- obtenerPrecio(tipo)
 FinSubProceso
 
 
-SubProceso total <- calcularTotal(precio, cantidad)
+SubProceso calcularTotal(precio, cantidad, total)
 	
 	total <- precio * cantidad
 	
