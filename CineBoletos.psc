@@ -113,7 +113,7 @@ Funcion  rs <- obtenerPrecio(tipo)
 		De Otro Modo:
 			precio <- 5
 	FinSegun
-	
+	rs <- precio
 FinFuncion
 
 
