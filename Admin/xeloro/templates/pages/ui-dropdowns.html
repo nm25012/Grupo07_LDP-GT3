@@ -1,0 +1,452 @@
+{% extends 'layouts/vertical.html' %} {% load static i18n %} {% block title %}Dashboard{% endblock title %} {% block styles %} {% endblock styles %} {% block page_content %} {% include 'partials/page-title.html' with subtitle='Components' title='Dropdown' %}
+
+<div class="grid lg:grid-cols-2 gap-6">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Default Dropdowns</h5>
+        </div>
+        <div class="card-body">
+            <div class="flex flex-wrap items-center gap-2">
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn bg-primary hover:bg-primary-600 border-primary text-white" id="hs-dropdown-default" type="button">
+                        Primary
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn bg-default-500 hover:bg-default-600 border-default-500 text-white" id="hs-dropdown-default" type="button">
+                        Gray
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Menu alignment</h5>
+        </div>
+        <div class="card-body">
+            <div class="flex flex-wrap gap-2">
+                <div class="hs-dropdown relative [--placement:right-top]">
+                    <button class="btn text-default-700 bg-default-100 hover:bg-default-200" type="button">
+                        Dropdown Right
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative [--placement:left-top]">
+                    <button class="hs-dropdown-toggle btn text-default-700 bg-default-100 hover:bg-default-200" type="button">
+                        Dropdown left
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative [--placement:top]">
+                    <button class="hs-dropdown-toggle btn text-default-700 bg-default-100 hover:bg-default-200" type="button">
+                        Dropdown Top
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative [--placement:bottom]">
+                    <button class="hs-dropdown-toggle btn text-default-700 bg-default-100 hover:bg-default-200" type="button">
+                        Dropdown Bottom
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative [--placement:top-left]">
+                    <button class="hs-dropdown-toggle btn text-default-700 bg-default-100 hover:bg-default-200" type="button">
+                        Top Left
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative [--placement:top-right]">
+                    <button class="hs-dropdown-toggle btn text-default-700 bg-default-100 hover:bg-default-200" type="button">
+                        Top Right
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Color Variant</h5>
+        </div>
+        <div class="card-body">
+            <div class="flex flex-wrap gap-2">
+                <div class="hs-dropdown relative">
+                    <button class="btn text-white bg-primary hover:bg-primary-600 border-primary" type="button">
+                        Primary
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn text-white bg-default-500 hover:bg-default-600" type="button">
+                        Gray
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn text-white bg-teal-500 hover:bg-teal-600 border-teal-500" type="button">
+                        Teal
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn text-white bg-primary-500 hover:bg-primary-600 border-primary-500" type="button">
+                        Blue
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn text-white bg-amber-500 hover:bg-amber-600 border-amber-500" type="button">
+                        Yellow
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn text-white bg-cyan-500 hover:bg-cyan-600 border-cyan-500" type="button">
+                        Cyan
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn text-white bg-primary-500 hover:bg-primary-600 border-primary-500" type="button">
+                        Sky
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn text-white bg-indigo-500 hover:bg-indigo-600 border-indigo-500" type="button">
+                        Indigo
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-dropdown relative">
+                    <button class="hs-dropdown-toggle btn text-white bg-purple-500 hover:bg-purple-600 border-purple-500" type="button">
+                        Purple
+                        <i class="iconify tabler--chevron-down ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <ul class="flex flex-col gap-1">
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Another Action</a>
+                            </li>
+                            <li>
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-400/10 rounded" href="#">Somthing else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Variant</h5>
+        </div>
+        <div class="card-body">
+            <div class="flex flex-wrap gap-2">
+                <div class="hs-dropdown [--auto-close:inside]">
+                    <button class="hs-dropdown-toggle btn bg-primary hover:bg-primary-700 text-white" type="button">
+                        Radio
+                        <i class="iconify tabler--chevron-down size-4 ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <div class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-100 rounded">
+                            <div class="flex items-center">
+                                <input class="form-radio text-primary" id="default-radio" name="default-radio" type="radio" />
+                                <label class="text-sm text-default-600 ms-2" for="default-radio">Default radio</label>
+                            </div>
+                        </div>
+                        <div class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-100 rounded">
+                            <div class="flex items-center">
+                                <input checked="" class="form-radio text-primary" id="checked-radio" name="default-radio" type="radio" />
+                                <label class="text-sm text-default-600 ms-2" for="checked-radio">Checked radio</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hs-dropdown [--auto-close:inside]">
+                    <button class="hs-dropdown-toggle btn bg-primary hover:bg-primary-700 text-white" type="button">
+                        CheckBox
+                        <i class="iconify tabler--chevron-down size-4 ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-1.5 hidden">
+                        <div class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-100 rounded">
+                            <div class="flex items-center">
+                                <input class="form-checkbox text-primary rounded" id="default-checkbox" type="checkbox" />
+                                <label class="text-sm text-default-600 ms-2" for="default-checkbox">Default checkbox</label>
+                            </div>
+                        </div>
+                        <div class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-100 rounded">
+                            <div class="flex items-center">
+                                <input checked="" class="form-checkbox text-primary rounded" id="checked-checkbox" type="checkbox" />
+                                <label class="text-sm text-default-600 ms-2" for="checked-checkbox">Checked checkbox</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hs-dropdown [--auto-close:inside]">
+                    <button class="hs-dropdown-toggle btn bg-primary hover:bg-primary-700 text-white" type="button">
+                        Form
+                        <i class="iconify tabler--chevron-down size-4 ms-1"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 p-4 hidden">
+                        <form class="">
+                            <div class="mb-3 space-y-1">
+                                <label class="text-default-800 font-medium" for="exampleInputEmail1">Email address</label>
+                                <input aria-describedby="emailHelp" class="form-input" id="exampleInputEmail1" placeholder="Enter email" type="email" />
+                                <span class="inline-block">
+                                    <small class="form-text text-xs text-default-700" id="emailHelp">We'll never shareyour email with anyone else.</small>
+                                </span>
+                            </div>
+                            <div class="mb-3 space-y-1">
+                                <label class="text-default-800 font-medium" for="exampleInputPassword1">Password</label>
+                                <input class="form-input" id="exampleInputPassword1" placeholder="Password" type="password" />
+                            </div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <input class="form-checkbox text-primary rounded" id="checkmeout0" type="checkbox" />
+                                <label class="text-default-800 text-xs font-medium inline-block" for="checkmeout0">Check me out !</label>
+                            </div>
+                            <button class="inline-block py-2 px-4 text-sm text-center bg-primary hover:bg-primary-700 text-white rounded transition-all duration-500">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="hs-dropdown">
+                    <button class="hs-dropdown-toggle btn size-9.75 p-0 bg-primary text-white hover:bg-primary-700">
+                        <i class="iconify tabler--dots-vertical size-5"></i>
+                    </button>
+                    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 min-w-48 transition-[opacity,margin] mt-4 opacity-0 z-10 bg-white shadow-lg rounded-lg border border-default-100 hidden">
+                        <ul class="flex flex-col gap-1 py-1.5">
+                            <li class="mx-1.5">
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-100 rounded" href="#">Action</a>
+                            </li>
+                            <li class="mx-1.5">
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-100 rounded" href="#">Another Action</a>
+                            </li>
+                            <li class="mx-1.5">
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-100 rounded" href="#">Menu Item</a>
+                            </li>
+                            <hr class="border-default-100" />
+                            <li class="mx-1.5">
+                                <a class="flex items-center font-normal text-default-600 py-2 px-3 transition-all hover:text-default-700 hover:bg-default-100 rounded" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock page_content %} {% block scripts %} {% endblock scripts %}

@@ -1,0 +1,50 @@
+{% extends 'layouts/vertical.html' %} {% load static i18n %} {% block title %}Aspect Ratio{% endblock title %} {% block styles %} {% endblock styles %} {% block page_content %} {% include 'partials/page-title.html' with subtitle='Components' title='Aspect Ratio' %}
+
+<div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Aspect Ratio 21:9</h4>
+        </div>
+        <div class="card-body">
+            <!-- 21:9 aspect ratio -->
+            <div class="relative w-full aspect-21/9">
+                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="size-full" frameborder="0" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Aspect Ratio For Video (16:9)</h4>
+        </div>
+        <div class="card-body">
+            <!-- 16:9 aspect ratio -->
+            <div class="relative w-full aspect-video">
+                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="size-full" frameborder="0" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Aspect Ratio Square 1:1</h4>
+        </div>
+        <div class="card-body">
+            <!-- 1:1 aspect ratio -->
+            <div class="relative w-full aspect-square">
+                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="size-full" frameborder="0" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Aspect Ratio 4:3</h4>
+        </div>
+        <div class="card-body">
+            <!-- 4:3 aspect ratio -->
+            <div class="relative w-full aspect-4/3">
+                <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="size-full" frameborder="0" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+            </div>
+            <!-- end preview-->
+        </div>
+    </div>
+</div>
+{% endblock page_content %} {% block scripts %} {% endblock scripts %}

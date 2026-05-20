@@ -1,0 +1,72 @@
+{% extends 'layouts/vertical.html' %} {% load static i18n %} {% block title %}Dashboard{% endblock title %} {% block styles %}
+<link href="{% static 'libs/jsvectormap/css/jsvectormap.min.css' %}" rel="stylesheet" type="text/css" />
+{% endblock styles %} {% block page_content %} {% include 'partials/page-title.html' with subtitle='Maps' title='Vector' %}
+
+<div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+    <div class="lg:col-span-2">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">World Vector Map</h4>
+                <div class="mb-3">
+                    <div id="world-map-markers" style="height: 360px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Canada Vector Map</h4>
+            <div class="mb-3">
+                <div id="canada-vector-map" style="height: 360px"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Russia Vector Map</h4>
+            <div class="mb-3">
+                <div id="russia-vector-map" style="height: 360px"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Italy Vector Map</h4>
+            <div class="mb-3">
+                <div id="italy-vector-map" style="height: 360px"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Iraq Vector Map</h4>
+            <div class="mb-3">
+                <div id="iraq-vector-map" style="height: 360px"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Spain Vector Map</h4>
+            <div class="mb-3">
+                <div id="spain-vector-map" style="height: 360px"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end card body -->
+</div>
+<!-- end grid-->
+{% endblock page_content %} {% block scripts %}
+<script src="{% static 'js/pages/maps-vector.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/js/jsvectormap.min.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/canada.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/iraq.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/italy.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/russia.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/spain.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/us-aea-en.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/us-lcc-en.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/us-mill-en.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/world-merc.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/maps/world.js' %}"></script>
+{% endblock scripts %}

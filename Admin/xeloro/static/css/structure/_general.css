@@ -1,0 +1,44 @@
+html {
+    position: relative;
+    scroll-behavior: smooth;
+    @apply h-full w-full;
+}
+
+body {
+    overflow-x: hidden;
+    @apply antialiased font-body font-normal text-sm leading-normal bg-default-50 text-default-500 h-full w-full;
+}
+
+@layer base {
+
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+.container {
+    @apply mx-auto max-w-full px-6;
+}
+
+code {
+    @apply text-primary-500;
+}
+
+.text-muted {
+    @apply text-default-400;
+}
+
+.wrapper {
+    @apply flex flex-col min-h-full;
+}
+
+/* // Page Content */
+.page-content {
+    @apply flex flex-col flex-auto relative transition-all duration-300;
+}
+
+main {
+    /* // @apply flex-grow py-6 px-6; */
+    @apply grow mx-auto max-w-full p-6;
+}

@@ -1,0 +1,194 @@
+{% extends 'layouts/vertical.html' %} {% load static i18n %} {% block title %}Dashboard{% endblock title %} {% block styles %} {% endblock styles %} {% block page_content %} {% include 'partials/page-title.html' with subtitle='Forms' title='Input' %}
+
+<div class="flex flex-col gap-6">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Input</h4>
+        </div>
+        <div class="card-body">
+            <div class="grid lg:grid-cols-2 gap-6">
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="simpleinput">Text</label>
+                    <input class="form-input" id="simpleinput" type="text" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-email">Email</label>
+                    <input class="form-input" id="example-email" name="example-email" placeholder="Email" type="email" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-password">Password</label>
+                    <input class="form-input" id="example-password" type="password" value="password" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="passwordShowHide">Show/Hide Password*</label>
+                    <div class="flex">
+                        <input class="form-input rounded-e-none!" id="passwordShowHide" placeholder="Enter password" type="password" />
+                        <button class="text-base bg-default-100 border border-s-0 border-default-200 flex items-center rounded rounded-s-none! px-3 py-1.75" data-hs-toggle-password='{"target":"#passwordShowHide"}' type="button">
+                            <i class="iconify tabler--eye hs-password-active:hidden flex"></i>
+                            <i class="iconify tabler--eye-off hs-password-active:flex hidden"></i>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-palaceholder">Placeholder</label>
+                    <input class="form-input" id="example-palaceholder" placeholder="placeholder" type="text" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-readonly">Readonly</label>
+                    <input class="form-input" id="example-readonly" readonly="" type="text" value="Readonly value" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-disable">Disabled</label>
+                    <input class="form-input" disabled="" id="example-disable" type="text" value="Disabled value" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-date">Date</label>
+                    <input class="form-input" id="example-date" name="date" type="date" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-month">Month</label>
+                    <input class="form-input" id="example-month" name="month" type="month" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-time">Time</label>
+                    <input class="form-input" id="example-time" name="time" type="time" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-week">Week</label>
+                    <input class="form-input" id="example-week" name="week" type="week" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-number">Number</label>
+                    <input class="form-input" id="example-number" name="number" type="number" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-color">Color</label>
+                    <input class="form-input h-10" id="example-color" name="color" type="color" value="#1E85FF" />
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-select">Input Select</label>
+                    <select class="form-select" id="example-select">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-multiselect">Multiple Select</label>
+                    <select class="form-input" id="example-multiselect" multiple="">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="example-textarea">Textarea</label>
+                    <textarea class="form-input" id="example-textarea" rows="4"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end card -->
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Input Group</h4>
+        </div>
+        <div class="card-body">
+            <div class="grid lg:grid-cols-2 gap-6">
+                <div class="mb-5">
+                    <div class="flex">
+                        <div class="flex items-center justify-center border border-default-200 bg-default-100 px-3 font-semibold rounded-s-md border-e-0">@</div>
+                        <input class="form-input rounded-s-none!" placeholder="Username" type="text" />
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="flex">
+                        <input class="form-input rounded-e-none!" placeholder="Recipient's username" type="text" />
+                        <div class="flex items-center justify-center border border-default-200 bg-default-100 px-3 font-semibold rounded-e-md border-s-0">@example.com</div>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="flex">
+                        <div class="flex items-center justify-center border border-default-200 bg-default-100 px-3 font-semibold rounded-s-md border-e-0">https://</div>
+                        <input class="form-input rounded-s-none!" id="url" placeholder="example.com/users/" type="text" />
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <div class="flex">
+                        <div class="flex items-center justify-center border border-default-200 bg-default-100 px-3 font-semibold rounded-s-md border-e-0">$</div>
+                        <input class="form-input rounded-none!" placeholder="" type="text" />
+                        <div class="flex items-center justify-center border border-default-200 bg-default-100 px-3 font-semibold rounded-e-md border-s-0">.00</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex">
+                        <span class="px-4 inline-flex items-center rounded-s border border-e-0 border-default-200 bg-default-50 text-sm text-default-500">Default</span>
+                        <input class="form-input rounded-s-none!" type="text" />
+                    </div>
+                </div>
+                <div>
+                    <div class="sm:flex">
+                        <input class="form-input sm:rounded-e-none!" type="text" />
+                        <span class="py-2.5 px-4 inline-flex items-center min-w-fit w-full border border-default-200 bg-default-50 text-sm text-default-500 -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:w-auto sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-tr-none sm:last:rounded-bl-none sm:last:rounded-e-lg">
+                            <svg class="hidden sm:block size-4 text-default-400" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" fill-rule="evenodd"></path>
+                            </svg>
+                            <svg class="sm:hidden mx-auto size-4 text-default-400" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z" fill-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <input class="form-input sm:rounded-s-none!" type="text" />
+                    </div>
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="simpleinput">Email Address</label>
+                    <div class="relative">
+                        <input class="form-input ps-11" id="leading-icon" name="leading-icon" placeholder="you@site.com" type="email" />
+                        <div class="absolute inset-y-0 start-4 flex items-center z-20">
+                            <i class="iconify tabler--mail text-lg text-default-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="simpleinput">Text</label>
+                    <div class="relative">
+                        <input class="form-input px-8" id="input-with-leading-and-trailing-icon" name="input-with-leading-and-trailing-icon" placeholder="0.00" type="text" />
+                        <div class="absolute inset-y-0 start-4 flex items-center pointer-events-none z-20">
+                            <span class="text-default-500">$</span>
+                        </div>
+                        <div class="absolute inset-y-0 end-4 flex items-center pointer-events-none z-20">
+                            <span class="text-default-500">USD</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="simpleinput">Text</label>
+                    <div class="flex">
+                        <div class="px-4 inline-flex items-center min-w-fit rounded-s border border-e-0 border-default-200 bg-default-50">
+                            <span class="text-sm text-default-500">http://</span>
+                        </div>
+                        <input class="form-input rounded-s-none!" id="input-with-add-on-url" name="input-with-add-on-url" placeholder="www.example.com" type="text" />
+                    </div>
+                </div>
+                <div>
+                    <label class="text-default-800 text-sm font-medium inline-block mb-2" for="simpleinput">Text</label>
+                    <div class="flex">
+                        <div class="px-4 inline-flex items-center min-w-fit rounded-s border border-default-200 bg-default-50">
+                            <span class="text-sm text-default-500">$</span>
+                        </div>
+                        <div class="px-4 inline-flex items-center min-w-fit border-y border-default-200 bg-default-50">
+                            <span class="text-sm text-default-500">0.00</span>
+                        </div>
+                        <input class="form-input rounded-s-none!" id="leading-multiple-add-on" name="inline-add-on" placeholder="www.example.com" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end card -->
+</div>
+{% endblock page_content %} {% block scripts %} {% endblock scripts %}

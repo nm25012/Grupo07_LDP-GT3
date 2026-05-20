@@ -1,0 +1,257 @@
+{% load static i18n %}
+<!-- Topbar Start -->
+<header class="app-header sticky top-0 z-50 min-h-topbar flex items-center bg-white border-b border-default-100 shadow shadow-default-900/2 print:hidden">
+    <div class="container flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+            <!-- Topbar Brand Logo -->
+            <a href="/" class="lg:hidden flex items-center gap-2">
+                <!-- Add your logo image here (recommended size: 28×28) -->
+                <!-- <img src="{% static 'images/logo.png' %}" alt="Xeloro Logo" class="size-7 rounded-full"> -->
+
+                <div class="size-7 rounded-full flex items-center justify-center text-primary ring ring-primary">
+                    <i class="iconify tabler--circle-dot-filled size-6.5"></i>
+                </div>
+
+                <span class="font-black text-2xl/none text-default-800 uppercase tracking-wider md:flex hidden">Xeloro</span>
+            </a>
+
+            <!-- Sidenav Menu Toggle Button -->
+            <button class="btn p-2 border-default-200" data-hs-overlay="#app-menu" aria-label="Toggle navigation">
+                <i class="iconify tabler--align-left text-xl"></i>
+            </button>
+
+            <!-- Create New Dropdown -->
+            <div class="relative">
+                <div class="hs-dropdown relative inline-flex">
+                    <button type="button" class="hs-dropdown-toggle btn border-default-200 hs-dropdown-open:bg-default-100">
+                        <i class="iconify tabler--layout-2 text-base"></i>
+                        Create New
+                        <i class="iconify tabler--chevron-down text-base"></i>
+                    </button>
+
+                    <div class="hs-dropdown-menu duration mt-2 min-w-48 rounded-lg border border-default-100 bg-white p-2 opacity-0 shadow shadow-default-900/2 transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
+                        <!-- item -->
+                        <a href="javascript:void(0);" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--apps text-base text-default-600"></i>
+                            Application
+                        </a>
+
+                        <!-- item -->
+                        <a href="javascript:void(0);" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--code text-base text-default-600"></i>
+                            Software
+                        </a>
+
+                        <!-- item -->
+                        <a href="javascript:void(0);" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--cpu text-base text-default-600"></i>
+                            EMS System
+                        </a>
+
+                        <!-- item -->
+                        <a href="javascript:void(0);" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--users text-base text-default-600"></i>
+                            CRM App
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topbar Search -->
+            <div class="xl:flex hidden items-center relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <i class="iconify tabler--search text-base"></i>
+                </div>
+                <input type="search" class="form-input px-10 w-80" placeholder="Search..." />
+                <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3">
+                    <i class="iconify tabler--microphone text-base hover:text-black"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <!-- Language Dropdown Button -->
+            <div class="hs-dropdown relative inline-flex [--placement:bottom-right]">
+                <button type="button" class="hs-dropdown-toggle hs-dropdown-toggle btn p-2 border-default-200 hs-dropdown-open:bg-default-100">
+                    <img src="{% static 'images/flags/us.jpg' %}" alt="user-image" class="h-4 my-0.5" />
+                </button>
+
+                <div class="hs-dropdown-menu duration mt-2 min-w-48 rounded-lg border border-default-100 bg-white p-2 opacity-0 shadow shadow-default-900/2 transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
+                    <a href="javascript:void(0);" class="flex items-center gap-2.5 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                        <img src="{% static 'images/flags/germany.jpg' %}" alt="user-image" class="h-4" />
+                        <span class="align-middle">German</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="flex items-center gap-2.5 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                        <img src="{% static 'images/flags/italy.jpg' %}" alt="user-image" class="h-4" />
+                        <span class="align-middle">Italian</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="flex items-center gap-2.5 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                        <img src="{% static 'images/flags/spain.jpg' %}" alt="user-image" class="h-4" />
+                        <span class="align-middle">Spanish</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="flex items-center gap-2.5 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                        <img src="{% static 'images/flags/russia.jpg' %}" alt="user-image" class="h-4" />
+                        <span class="align-middle">Russian</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Notification Dropdown Button -->
+            <div class="hs-dropdown relative inline-flex [--placement:bottom-right]">
+                <!-- Toggle -->
+                <button type="button" class="hs-dropdown-toggle hs-dropdown-toggle btn p-2 border-default-200 hs-dropdown-open:bg-default-100">
+                    <i class="iconify tabler--bell text-xl"></i>
+                </button>
+
+                <!-- Dropdown menu -->
+                <div class="hs-dropdown-menu duration mt-2 w-full max-w-sm rounded-lg border border-default-100 bg-white opacity-0 shadow shadow-default-900/2 transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
+                    <!-- Header -->
+                    <div class="block px-4 py-2 font-medium text-center text-default-700 rounded-t-lg bg-default-50">Notifications</div>
+
+                    <!-- Items -->
+                    <div class="divide-y divide-default-100">
+                        <!-- Item -->
+                        <a href="#" class="relative flex px-4 py-3 hover:bg-default-100">
+                            <div class="relative shrink-0">
+                                <img class="rounded-full w-11 h-11" src="{% static 'images/users/avatar-6.jpg' %}" alt="Alex image" />
+                                <span class="absolute -bottom-1 -right-1 flex items-center justify-center w-5 h-5 bg-green-500 border border-white rounded-full">
+                                    <i class="iconify tabler--alert-circle text-white text-xs"></i>
+                                </span>
+                            </div>
+                            <div class="w-full ps-3">
+                                <p class="text-default-500 text-sm mb-1.5">
+                                    New alert from
+                                    <span class="font-semibold text-default-900">Alex Johnson</span>
+                                    : “System.”
+                                </p>
+                                <span class="text-xs text-primary">2 minutes ago</span>
+                            </div>
+                        </a>
+
+                        <!-- Item -->
+                        <a href="#" class="relative flex px-4 py-3 hover:bg-default-100">
+                            <div class="relative shrink-0">
+                                <img class="rounded-full w-11 h-11" src="{% static 'images/users/avatar-7.jpg' %}" alt="Sarah image" />
+                                <span class="absolute -bottom-1 -right-1 flex items-center justify-center w-5 h-5 bg-primary-600 border border-white rounded-full">
+                                    <i class="iconify tabler--file-text text-white text-xs"></i>
+                                </span>
+                            </div>
+                            <div class="w-full ps-3">
+                                <p class="text-default-500 text-sm mb-1.5">
+                                    <span class="font-semibold text-default-900">Sarah Lee</span>
+                                    shared a document with you.
+                                </p>
+                                <span class="text-xs text-primary">5 minutes ago</span>
+                            </div>
+                        </a>
+
+                        <!-- Item -->
+                        <a href="#" class="relative flex px-4 py-3 hover:bg-default-100">
+                            <div class="relative shrink-0">
+                                <img class="rounded-full w-11 h-11" src="{% static 'images/users/avatar-8.jpg' %}" alt="Michael image" />
+                                <span class="absolute -bottom-1 -right-1 flex items-center justify-center w-5 h-5 bg-purple-500 border border-white rounded-full">
+                                    <i class="iconify tabler--message text-white text-xs"></i>
+                                </span>
+                            </div>
+                            <div class="w-full ps-3">
+                                <p class="text-default-500 text-sm mb-1.5">
+                                    <span class="font-semibold text-default-900">Michael Clark</span>
+                                    replied to your comment.
+                                </p>
+                                <span class="text-xs text-primary">15 minutes ago</span>
+                            </div>
+                        </a>
+
+                        <!-- Item -->
+                        <a href="#" class="relative flex px-4 py-3 hover:bg-default-100">
+                            <div class="relative shrink-0">
+                                <img class="rounded-full w-11 h-11" src="{% static 'images/users/avatar-9.jpg' %}" alt="Emma image" />
+                                <span class="absolute -bottom-1 -right-1 flex items-center justify-center w-5 h-5 bg-pink-500 border border-white rounded-full">
+                                    <i class="iconify tabler--heart text-white text-xs"></i>
+                                </span>
+                            </div>
+                            <div class="w-full ps-3">
+                                <p class="text-default-500 text-sm mb-1.5">
+                                    <span class="font-semibold text-default-900">Emma Stone</span>
+                                    reacted to your post.
+                                </p>
+                                <span class="text-xs text-primary">30 minutes ago</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Footer -->
+                    <a href="#" class="block py-2 text-sm font-medium text-center text-default-900 rounded-b-lg bg-default-50 hover:bg-default-100">
+                        <span class="inline-flex items-center gap-2">
+                            <i class="iconify tabler--eye text-default-500"></i>
+                            View all
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Fullscreen Toggle Button -->
+            <div class="md:flex hidden">
+                <button data-toggle="fullscreen" type="button" class="hs-dropdown-toggle btn p-2 border-default-200">
+                    <span class="sr-only">Fullscreen Mode</span>
+                    <i class="iconify tabler--maximize text-xl inline-flex in-[.fullscreen]:hidden"></i>
+                    <i class="iconify tabler--minimize text-xl hidden in-[.fullscreen]:inline-flex"></i>
+                </button>
+            </div>
+
+            <!-- Profile Dropdown Button -->
+            <div class="relative">
+                <div class="hs-dropdown relative inline-flex [--placement:bottom-right]">
+                    <!-- Toggle -->
+                    <button type="button" class="hs-dropdown-toggle flex items-center gap-2">
+                        <img src="{% static 'images/users/avatar-1.jpg' %}" alt="user-image" class="size-9 rounded-full" />
+                        <span class="hidden sm:block text-sm font-semibold text-default-800">John Doe</span>
+                        <i class="iconify tabler--chevron-down text-default-500"></i>
+                    </button>
+
+                    <!-- Menu -->
+                    <div class="hs-dropdown-menu duration mt-2 min-w-44 rounded-lg border border-default-100 bg-white p-2 opacity-0 shadow shadow-default-900/2 transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
+                        <a href="#" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--user text-base text-default-500"></i>
+                            Profile
+                        </a>
+
+                        <a href="#" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--rss text-base text-default-500"></i>
+                            Feed
+                        </a>
+
+                        <a href="#" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--chart-bar text-base text-default-500"></i>
+                            Analytics
+                        </a>
+
+                        <a href="#" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--settings text-base text-default-500"></i>
+                            Settings
+                        </a>
+
+                        <a href="#" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100">
+                            <i class="iconify tabler--lifebuoy text-base text-default-500"></i>
+                            Support
+                        </a>
+
+                        <hr class="my-2 -mx-2 border-default-100" />
+
+                        <a href="{% url 'pages:dynamic_pages' template_name='auth-logout' %}" class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-danger hover:bg-danger/10">
+                            <i class="iconify tabler--logout text-base"></i>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Topbar End -->

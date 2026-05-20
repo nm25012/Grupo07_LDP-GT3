@@ -1,0 +1,22 @@
+{% load static i18n %}
+<!-- Page Title Start -->
+<div class="flex items-center md:justify-between flex-wrap gap-2 mb-5">
+    <div>
+        <!-- <h4 class="text-default-900 text-lg font-medium mb-1.5">{{ title }}</h4> -->
+
+        <div class="flex items-center gap-2 text-sm font-semibold">
+            <a href="/" class="flex">
+                <i class="iconify tabler--smart-home text-lg shrink-0 text-default-500"></i>
+            </a>
+
+            <i class="iconify tabler--chevron-right text-sm shrink-0 text-default-500 rtl:rotate-180"></i>
+
+            <a href="#" class="text-sm font-medium text-default-700">{{ subtitle }}</a>
+
+            <i class="iconify tabler--chevron-right text-sm shrink-0 text-default-500 rtl:rotate-180"></i>
+
+            <a href="#" class="text-sm font-medium text-default-700" aria-current="page">{{ title }}</a>
+        </div>
+    </div>
+</div>
+<!-- Page Title End -->

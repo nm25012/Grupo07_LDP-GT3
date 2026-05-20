@@ -1,0 +1,51 @@
+{% extends 'layouts/base.html' %} {% load static i18n %} {% block title %}Lock Screen{% endblock title %} {% block styles %} {% endblock styles %} {% block content %}
+<div class="xl:w-1/4 md:w-3/4 w-full m-8 whitespace-nowrap">
+    <div class="card">
+        <div class="w-full">
+            <div class="px-6 py-8">
+                <div class="flex justify-between items-start mb-8">
+                    <a class="flex items-center gap-2" href="/">
+                        <div class="size-7 rounded-full flex items-center justify-center text-primary ring ring-primary">
+                            <i class="iconify tabler--circle-dot-filled size-6.5"></i>
+                        </div>
+                        <span class="font-black text-2xl/none text-default-800 uppercase tracking-wider">Xeloro</span>
+                    </a>
+                    <h5 class="text-xl font-semibold text-default-700">Lock Screen</h5>
+                </div>
+                <div class="flex flex-col justify-center items-center mb-4">
+                    <img alt="thumbnail" class="rounded-full w-24 h-24 mb-4 p-1 border border-default-100" src="{% static 'images/users/avatar-1.jpg' %}" />
+                    <h5 class="text-base text-default-800 mb-2 font-semibold">Paul D. Shelly</h5>
+                    <p class="text-default-500 text-center mb-6 text-sm mt-3">Enter your password to access the admin.</p>
+                </div>
+                <div class="flex justify-center mb-6">
+                    <button class="inline-flex items-center justify-center rounded py-1.5 px-3 text-sm font-semibold transition-all w-full text-white bg-primary">Unlock</button>
+                </div>
+                <div class="flex items-center my-6">
+                    <div class="flex-auto mt-px border-t border-dashed border-default-200"></div>
+                    <div class="mx-4 text-secondary">Or</div>
+                    <div class="flex-auto mt-px border-t border-dashed border-default-200"></div>
+                </div>
+                <p class="text-default-500 text-center">
+                    Not you ? return
+                    <a class="text-primary ms-1" href="{% url 'pages:dynamic_pages' template_name='auth-login' %}"><b>Login</b></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Background -->
+<div class="absolute inset-0 -z-10 mx-0 w-full overflow-hidden">
+    <div class="absolute inset-0 size-screen">
+        <div class="absolute inset-0 bg-linear-to-r from-primary to-blue-100 mask-[radial-gradient(white,transparent)] opacity-40">
+            <svg aria-hidden="true" class="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-20deg] fill-black/40 stroke-black/50 mix-blend-overlay">
+                <defs>
+                    <pattern height="52" id="auth_pattern" patternunits="userSpaceOnUse" width="70" x="-12" y="4">
+                        <path d="M.5 56V.5H72" fill="none"></path>
+                    </pattern>
+                </defs>
+                <rect fill="url(#auth_pattern)" height="100%" stroke-width="0" width="100%"></rect>
+            </svg>
+        </div>
+    </div>
+</div>
+{% endblock content %} {% block scripts %} {% endblock scripts %}

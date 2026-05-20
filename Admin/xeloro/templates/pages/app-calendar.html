@@ -1,0 +1,12 @@
+{% extends 'layouts/vertical.html' %} {% load static i18n %} {% block title %}Calendar{% endblock title %} {% block styles %} {% endblock styles %} {% block page_content %} {% include 'partials/page-title.html' with subtitle='Menu' title='Calendar' %}
+
+<div class="card">
+    <div class="card-body">
+        <div id="calendar"></div>
+    </div>
+</div>
+
+{% endblock page_content %} {% block scripts %}
+<script src="{% static 'libs/fullcalendar/index.global.min.js' %}"></script>
+<script src="{% static 'js/pages/app-calendar.js' %}"></script>
+{% endblock scripts %}

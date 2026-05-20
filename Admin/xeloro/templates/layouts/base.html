@@ -1,0 +1,30 @@
+{% load static i18n %}
+<!doctype html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}" {% block html_attribute %}{% endblock html_attribute %} class="light" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}Xeloro - Tailwind 4 Django Admin Dashboard{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="{% block description %}A fully featured premium admin template built on top of awesome Django and Tailwind CSS 4.{% endblock description %}" />
+        <meta name="author" content="{% block author %}MyraStudio{% endblock author %}" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Open Graph Meta -->
+        <meta property="og:title" content="{% block og_title %}Xeloro - Django Tailwind 4 Dashboard{% endblock og_title %}" />
+        <meta property="og:description" content="{% block og_description %}A fully featured premium admin template.{% endblock og_description %}" />
+        <meta property="og:type" content="website" />
+
+        <!-- Twitter Meta -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{% block twitter_title %}Xeloro - Django Admin{% endblock twitter_title %}" />
+
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
+        {% block styles %}{% endblock styles %} {% include 'partials/head-css.html' %} {% block extra_head %}{% endblock extra_head %}
+    </head>
+    <body {% block body_attribute %}{% endblock body_attribute %}>
+        {% block preloader %}{% endblock %} {% block content %}{% endblock content %} {% block scripts %}{% endblock scripts %}
+    </body>
+</html>

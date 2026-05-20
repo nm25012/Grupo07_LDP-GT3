@@ -1,0 +1,373 @@
+{% extends 'layouts/vertical.html' %} {% load static i18n %} {% block title %}Dashboard{% endblock title %} {% block styles %}
+<link href="{% static 'libs/jsvectormap/css/jsvectormap.min.css' %}" rel="stylesheet" type="text/css" />
+{% endblock styles %} {% block page_content %} {% include 'partials/page-title.html' with subtitle='Menu' title='Dashboard' %}
+
+<div class="grid xl:grid-cols-4 md:grid-cols-2 gap-5 mb-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-4">
+                <span class="px-1 py-0.5 text-[10px]/[1.25] font-semibold rounded text-success bg-success/20 float-end">Daily</span>
+                <h5 class="card-title truncate">Cost per Unit</h5>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-medium text-default-800">$17.21</h2>
+                <span class="flex items-center">
+                    <span class="text-default-400 text-sm">12.5%</span>
+                    <i class="iconify tabler--arrow-up text-success text-base ms-2"></i>
+                </span>
+            </div>
+            <div class="flex w-full h-1.5 bg-default-200 rounded-full overflow-hidden shadow-sm">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="flex flex-col justify-center overflow-hidden rounded-full bg-primary w-11/12" role="progressbar"></div>
+            </div>
+        </div>
+        <!--end card body-->
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-4">
+                <span class="px-1 py-0.5 text-[10px]/[1.25] font-semibold rounded text-success bg-success/20 float-end">Per Week</span>
+                <h5 class="card-title truncate">Market Revenue</h5>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-medium text-default-800">$1875.54</h2>
+                <span class="flex items-center">
+                    <span class="text-default-400 text-sm">27.5%</span>
+                    <i class="iconify tabler--arrow-up text-success text-base ms-2"></i>
+                </span>
+            </div>
+            <div class="flex w-full h-1.5 bg-default-200 rounded-full overflow-hidden shadow-sm">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="flex flex-col justify-center overflow-hidden rounded-full bg-danger w-1/4" role="progressbar"></div>
+            </div>
+        </div>
+        <!--end card body-->
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-4">
+                <span class="px-1 py-0.5 text-[10px]/[1.25] font-semibold rounded text-success bg-success/20 float-end">Per Month</span>
+                <h5 class="card-title truncate">Expenses</h5>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-medium text-default-800">$784.62</h2>
+                <span class="flex items-center">
+                    <span class="text-default-400 text-sm">18.71%</span>
+                    <i class="iconify tabler--arrow-up text-success text-base ms-2"></i>
+                </span>
+            </div>
+            <div class="flex w-full h-1.5 bg-default-200 rounded-full overflow-hidden shadow-sm">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="flex flex-col justify-center overflow-hidden rounded-full bg-warning w-4/5" role="progressbar"></div>
+            </div>
+        </div>
+        <!--end card body-->
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-4">
+                <span class="px-1 py-0.5 text-[10px]/[1.25] font-semibold rounded text-success bg-success/20 float-end">All Time</span>
+                <h5 class="card-title truncate">Daily Visits</h5>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-medium text-default-800">1,15,187</h2>
+                <span class="flex items-center">
+                    <span class="text-default-400 text-sm">57%</span>
+                    <i class="iconify tabler--arrow-up text-success text-base ms-2"></i>
+                </span>
+            </div>
+            <div class="flex w-full h-1.5 bg-default-200 rounded-full overflow-hidden shadow-sm">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="flex flex-col justify-center overflow-hidden rounded-full bg-success w-1/4" role="progressbar"></div>
+            </div>
+        </div>
+        <!--end card body-->
+    </div>
+</div>
+<div class="grid xl:grid-cols-3 md:grid-cols-2 gap-5 mb-5">
+    <div class="xl:col-span-2">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Revenue</h5>
+                <div class="relative inline-flex">
+                    <div class="hs-dropdown relative [--placement:bottom-right] inline-flex">
+                        <button class="hs-dropdown-toggle btn hs-dropdown-open:text-primary p-0" type="button">
+                            <i class="iconify tabler--dots text-lg"></i>
+                        </button>
+                        <div class="hs-dropdown-menu duration mt-2 min-w-40 rounded-lg border border-default-100 bg-white p-2 opacity-0 z-10 shadow shadow-default-900/2 transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
+                            <!-- item -->
+                            <a class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100" href="javascript:void(0);">
+                                <i class="iconify tabler--edit text-base text-default-600"></i>
+                                Edit
+                            </a>
+                            <!-- item -->
+                            <a class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 transition-all hover:bg-danger/10 hover:text-danger" href="javascript:void(0);">
+                                <i class="iconify tabler--trash text-base"></i>
+                                Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="apex-charts" id="line-chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Last Month Sales</h4>
+            <div class="relative inline-flex">
+                <div class="hs-dropdown relative [--placement:bottom-right] inline-flex">
+                    <button class="hs-dropdown-toggle btn hs-dropdown-open:text-primary p-0" type="button">
+                        <i class="iconify tabler--dots text-lg"></i>
+                    </button>
+                    <div class="hs-dropdown-menu duration mt-2 min-w-40 rounded-lg border border-default-100 bg-white p-2 opacity-0 z-10 shadow shadow-default-900/2 transition-[opacity,margin] hs-dropdown-open:opacity-100 hidden">
+                        <!-- item -->
+                        <a class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 hover:bg-default-100" href="javascript:void(0);">
+                            <i class="iconify tabler--edit text-base text-default-600"></i>
+                            Edit
+                        </a>
+                        <!-- item -->
+                        <a class="flex items-center gap-2 py-2 px-3 rounded-md text-sm text-default-800 transition-all hover:bg-danger/10 hover:text-danger" href="javascript:void(0);">
+                            <i class="iconify tabler--trash text-base"></i>
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="apex-charts" id="radial-chart"></div>
+        </div>
+        <div class="border-t border-default-200 border-dashed card-body">
+            <div class="flex items-center justify-center gap-3">
+                <div class="flex items-center gap-1">
+                    <div class="size-3 rounded-full bg-primary"></div>
+                    <p class="text-sm text-default-700">Online</p>
+                </div>
+                <div class="flex items-center gap-1">
+                    <div class="size-3 rounded-full bg-danger"></div>
+                    <p class="text-sm text-default-700">Offlne</p>
+                </div>
+                <div class="flex items-center gap-1">
+                    <div class="size-3 rounded-full bg-info"></div>
+                    <p class="text-sm text-default-700">Retail</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid xl:grid-cols-2 gap-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Product Inventory Overview</h4>
+            <a class="text-sm text-primary underline transition-colors hover:text-primary-600" href="#">View All</a>
+        </div>
+        <div class="overflow-hidden rounded-lg">
+            <div class="overflow-x-auto">
+                <div class="min-w-full inline-block align-middle whitespace-nowrap">
+                    <div class="overflow-hidden">
+                        <table class="w-full text-sm text-left text-default-500">
+                            <thead class="text-xs text-default-700 uppercase bg-default-50 border-b border-default-100">
+                                <tr>
+                                    <th class="px-4 py-2" scope="col">
+                                        <div class="flex items-center">
+                                            <input class="form-checkbox rounded text-primary" id="checkbox-all" type="checkbox" />
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-2" scope="col">Product</th>
+                                    <th class="px-6 py-2" scope="col">Category</th>
+                                    <th class="px-6 py-2" scope="col">Price</th>
+                                    <th class="px-6 py-2" scope="col">Availability</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-default-100">
+                                <tr class="hover:bg-default-50">
+                                    <td class="w-4 p-4">
+                                        <div class="flex items-center">
+                                            <input class="form-checkbox rounded text-primary" id="checkbox-1" type="checkbox" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 flex items-center">
+                                        <img alt="Wireless Headphones" class="size-10 rounded-full" src="{% static 'images/media/img-1.jpg' %}" />
+                                        <div class="ps-3">
+                                            <div class="text-base font-semibold">Wireless Headphones</div>
+                                            <div class="font-normal text-default-500">SKU: WH1234</div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-default-900 whitespace-nowrap">Electronics</td>
+                                    <td class="px-6 py-4 text-default-900 whitespace-nowrap">$99.99</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>
+                                            In Stock
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-default-50">
+                                    <td class="w-4 p-4">
+                                        <div class="flex items-center">
+                                            <input class="form-checkbox rounded text-primary" id="checkbox-2" type="checkbox" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 flex items-center">
+                                        <img alt="Smart Watch" class="size-10 rounded-full" src="{% static 'images/media/img-2.jpg' %}" />
+                                        <div class="ps-3">
+                                            <div class="text-base font-semibold">Smart Watch</div>
+                                            <div class="font-normal text-default-500">SKU: SW5678</div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-default-900 whitespace-nowrap">Accessories</td>
+                                    <td class="px-6 py-4 text-default-900 whitespace-nowrap">$149.99</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div>
+                                            Out of Stock
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-default-50">
+                                    <td class="w-4 p-4">
+                                        <div class="flex items-center">
+                                            <input class="form-checkbox rounded text-primary" id="checkbox-3" type="checkbox" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 flex items-center">
+                                        <img alt="Running Shoes" class="size-10 rounded-full" src="{% static 'images/media/img-3.jpg' %}" />
+                                        <div class="ps-3">
+                                            <div class="text-base font-semibold">Running Shoes</div>
+                                            <div class="font-normal text-default-500">SKU: RS9101</div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-default-900 whitespace-nowrap">Footwear</td>
+                                    <td class="px-6 py-4 text-default-900 whitespace-nowrap">$79.99</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>
+                                            In Stock
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="bg-white hover:bg-default-50">
+                                    <td class="w-4 p-4">
+                                        <div class="flex items-center">
+                                            <input class="form-checkbox rounded text-primary" id="checkbox-4" type="checkbox" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 flex items-center">
+                                        <img alt="Coffee Maker" class="size-10 rounded-full" src="{% static 'images/media/img-4.jpg' %}" />
+                                        <div class="ps-3">
+                                            <div class="text-base font-semibold">Coffee Maker</div>
+                                            <div class="font-normal text-default-500">SKU: CM1122</div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-default-900 whitespace-nowrap">Home Appliances</td>
+                                    <td class="px-6 py-4 text-default-900 whitespace-nowrap">$49.99</td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div>
+                                            Out of Stock
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end card-->
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Top Sellers List</h4>
+            <a class="text-sm text-primary underline transition-colors hover:text-primary-600" href="#">View All</a>
+        </div>
+        <div class="overflow-hidden rounded-lg">
+            <div class="overflow-x-auto">
+                <div class="min-w-full inline-block align-middle whitespace-nowrap">
+                    <table class="w-full text-sm text-left text-default-500">
+                        <thead class="text-xs text-default-700 uppercase bg-default-50 border-b border-default-100">
+                            <tr>
+                                <th class="px-6 py-2" scope="col">Company Name</th>
+                                <th class="px-6 py-2" scope="col">CEO</th>
+                                <th class="px-6 py-2" scope="col">Total Sales</th>
+                                <th class="px-6 py-2" scope="col">Revenue</th>
+                                <th class="px-6 py-2" scope="col">Share</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-default-100">
+                            <tr class="hover:bg-default-50 transition-all">
+                                <td class="px-6 py-4 flex items-center">
+                                    <img alt="Company 1" class="size-10 rounded-full" src="{% static 'images/companies/airbnb.png' %}" />
+                                    <div class="ps-3">
+                                        <div class="text-base font-semibold">Techlab LLC</div>
+                                        <div class="font-normal text-default-500">Technology</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-base font-semibold">John Doe</div>
+                                    <div class="font-normal text-default-500">john.doe@abc.com</div>
+                                </td>
+                                <td class="px-6 py-4">45k</td>
+                                <td class="px-6 py-4">$900k</td>
+                                <td class="px-6 py-4">25%</td>
+                            </tr>
+                            <tr class="hover:bg-default-50 transition-all">
+                                <td class="px-6 py-4 flex items-center">
+                                    <img alt="Company 2" class="size-10 rounded-full" src="{% static 'images/companies/cisco.png' %}" />
+                                    <div class="ps-3">
+                                        <div class="text-base font-semibold">Visionary</div>
+                                        <div class="font-normal text-default-500">Marketing</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-base font-semibold">Jane Smith</div>
+                                    <div class="font-normal text-default-500">jane.smith@abc.com</div>
+                                </td>
+                                <td class="px-6 py-4">38k</td>
+                                <td class="px-6 py-4">$770k</td>
+                                <td class="px-6 py-4">21%</td>
+                            </tr>
+                            <tr class="hover:bg-default-50 transition-all">
+                                <td class="px-6 py-4 flex items-center">
+                                    <img alt="Company 3" class="size-10 rounded-full" src="{% static 'images/companies/amazon.png' %}" />
+                                    <div class="ps-3">
+                                        <div class="text-base font-semibold">Pinnacle</div>
+                                        <div class="font-normal text-default-500">Software</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-base font-semibold">Alex Johnson</div>
+                                    <div class="font-normal text-default-500">alex.johnson@abc.com</div>
+                                </td>
+                                <td class="px-6 py-4">30k</td>
+                                <td class="px-6 py-4">$600k</td>
+                                <td class="px-6 py-4">18%</td>
+                            </tr>
+                            <tr class="bg-white hover:bg-default-50 transition-all">
+                                <td class="px-6 py-4 flex items-center">
+                                    <img alt="Company 4" class="size-10 rounded-full" src="{% static 'images/companies/apple.png' %}" />
+                                    <div class="ps-3">
+                                        <div class="text-base font-semibold">Global</div>
+                                        <div class="font-normal text-default-500">Finance</div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-base font-semibold">Emma Lee</div>
+                                    <div class="font-normal text-default-500">emma.lee@abc.com</div>
+                                </td>
+                                <td class="px-6 py-4">27k</td>
+                                <td class="px-6 py-4">$550k</td>
+                                <td class="px-6 py-4">15%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end card-->
+</div>
+{% endblock page_content %} {% block scripts %}
+<script src="{% static 'libs/apexcharts/apexcharts.min.js' %}"></script>
+<script src="{% static 'libs/jsvectormap/js/jsvectormap.min.js' %}"></script>
+<script src="{% static 'js/pages/dashboard.js' %}"></script>
+{% endblock scripts %}

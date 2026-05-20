@@ -1,0 +1,56 @@
+{% extends 'layouts/vertical.html' %} {% load static i18n %} {% block title %}Dashboard{% endblock title %} {% block styles %}
+<link href="{% static 'libs/quill/quill.core.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'libs/quill/quill.bubble.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'libs/quill/quill.snow.css' %}" rel="stylesheet" type="text/css" />
+{% endblock styles %} {% block page_content %} {% include 'partials/page-title.html' with subtitle='Apps' title='Calendar' %}
+
+<div class="flex flex-col gap-6">
+    <div class="card">
+        <div class="card-header">
+            <div class="flex justify-between items-center">
+                <h4 class="card-title">Snow Editor</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Quill Editors -->
+            <div id="snow-editor" style="height: 300px">
+                <h3><span class="ql-size-large">Hello World!</span></h3>
+                <p><br /></p>
+                <h3>This is a simple editable area.</h3>
+                <p><br /></p>
+                <ul>
+                    <li>Select a text to reveal the toolbar.</li>
+                    <li>Edit rich document on-the-fly, so elastic!</li>
+                </ul>
+                <p><br /></p>
+                <p>End of simple area</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="flex justify-between items-center">
+                <h4 class="card-title">Bubble Editor</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Bubble Editors -->
+            <div id="bubble-editor" style="height: 300px">
+                <h3><span class="ql-size-large">Hello World!</span></h3>
+                <p><br /></p>
+                <h3>This is a simple editable area.</h3>
+                <p><br /></p>
+                <ul>
+                    <li>Select a text to reveal the toolbar.</li>
+                    <li>Edit rich document on-the-fly, so elastic!</li>
+                </ul>
+                <p><br /></p>
+                <p>End of simple area</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock page_content %} {% block scripts %}
+<script src="{% static 'libs/quill/quill.min.js' %}"></script>
+<script src="{% static 'js/pages/form-editor.js' %}"></script>
+{% endblock scripts %}

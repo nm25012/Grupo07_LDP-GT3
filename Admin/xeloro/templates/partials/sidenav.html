@@ -1,0 +1,407 @@
+{% load static i18n %}
+<!-- Start Sidebar -->
+<aside
+    id="app-menu"
+    class="hs-overlay fixed inset-y-0 start-0 z-60 hidden w-sidenav min-w-sidenav shadow shadow-default-900/2 bg-white border-e border-default-100 overflow-y-auto -translate-x-full transform transition-all duration-300 hs-overlay-open:translate-x-0 lg:bottom-0 lg:end-auto lg:z-30 lg:block lg:translate-x-0 rtl:translate-x-full rtl:hs-overlay-open:translate-x-0 rtl:lg:translate-x-0 print:hidden [--body-scroll:true] [--overlay-backdrop:true] lg:[--overlay-backdrop:false]"
+>
+    <div class="flex flex-col h-full">
+        <!-- Sidenav Logo -->
+        <div class="sticky top-0 flex min-h-topbar items-center justify-start px-5">
+            <a href="/" class="flex items-center gap-2">
+                <!-- Add your logo image here (recommended size: 28×28) -->
+                <!-- <img src="{% static 'images/logo.png' %}" alt="Xeloro Logo" class="size-7 rounded-full"> -->
+
+                <div class="size-6.5 rounded-full flex items-center justify-center text-primary ring ring-primary">
+                    <i class="iconify tabler--circle-dot-filled size-6"></i>
+                </div>
+
+                <span class="font-black text-2xl/none text-default-800 uppercase tracking-wider">Xeloro</span>
+            </a>
+        </div>
+
+        <div class="relative min-h-0 grow">
+            <div class="p-4 size-full scroll-layer" data-simplebar>
+                <!-- Menu -->
+                <ul class="admin-menu hs-accordion-group flex w-full flex-col gap-1">
+                    <li class="px-3 py-2 text-xs font-semibold text-default-400 flex items-center">
+                        Main
+                        <span class="h-px w-full bg-default-300/40 ms-3"></span>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="/" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--chart-bar text-xl"></i>
+                            <span>Dashboard</span>
+                            <span class="ms-auto size-4 rounded inline-flex border border-danger/30 items-center justify-center text-xs font-semibold bg-danger/20 text-danger">7</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='app-calendar' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--calendar text-xl"></i>
+                            Calendar
+                        </a>
+                    </li>
+
+                    <li class="px-3 py-2 text-xs font-semibold text-default-400 flex items-center">
+                        Pages
+                        <span class="h-px w-full bg-default-300/40 ms-3"></span>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='pages-invoice' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--invoice text-xl"></i>
+                            Invoice
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='pages-contacts' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--users text-xl"></i>
+                            Contacts
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='pages-plans' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--credit-card text-xl"></i>
+                            Pricing Plans
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='pages-starter' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--file-text text-xl"></i>
+                            <span class="menu-text">Starter Pages</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item hs-accordion">
+                        <a
+                            href="javascript:void(0)"
+                            class="hs-accordion-toggle group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5 hs-accordion-active:bg-default-900/5 hs-accordion-active:text-default-600"
+                        >
+                            <i class="iconify tabler--scan text-xl"></i>
+                            <span class="menu-text">Auth Pages</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+                            <ul class="mt-1 space-y-1">
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='auth-login' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Login</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='auth-register' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Register</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='auth-recoverpw' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Password Recover</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='auth-lock-screen' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Lock Screen</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='auth-logout' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="px-3 py-2 text-xs font-semibold text-default-400 flex items-center">
+                        Elements
+                        <span class="h-px w-full bg-default-300/40 ms-3"></span>
+                    </li>
+
+                    <li class="menu-item hs-accordion">
+                        <a
+                            href="javascript:void(0)"
+                            class="hs-accordion-toggle group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5 hs-accordion-active:bg-default-900/5 hs-accordion-active:text-default-900"
+                        >
+                            <i class="iconify tabler--layout-grid text-xl"></i>
+                            <span class="menu-text">Components</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+                            <ul class="mt-1 space-y-1">
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-accordion' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Accordion
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-alerts' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Alert
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-avatars' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Avatars
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-buttons' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Buttons
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-badges' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Badges
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-breadcrumbs' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Breadcrumbs
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-cards' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Cards
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-collapse' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Collapse
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-dropdowns' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Dropdowns
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-progress' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Progress
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-spinners' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Spinners
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-skeleton' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Skeleton
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-ratio' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Ratio
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-modals' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Modals
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-offcanvas' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Offcanvas
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-popovers' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Popovers
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-tooltips' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Tooltips
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='ui-typography' %}" class="flex items-center gap-x-2 rounded-md px-3 py-1.5 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        Typography
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="menu-item hs-accordion">
+                        <a
+                            href="javascript:void(0)"
+                            class="hs-accordion-toggle group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5 hs-accordion-active:bg-default-900/5 hs-accordion-active:text-default-600"
+                        >
+                            <i class="iconify tabler--square-check text-xl"></i>
+                            <span class="menu-text">Forms</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+                            <ul class="mt-1 space-y-1">
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='forms-inputs' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Inputs</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='forms-check-radio' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Checkbox & Radio</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='forms-masks' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Input Masks</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='forms-file-upload' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">File Upload</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='forms-editor' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Editor</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='forms-validation' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Validation</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'pages:dynamic_pages' template_name='forms-layout' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Form Layout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='maps-vector' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--map-pin text-xl"></i>
+                            <span class="menu-text">Maps</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='tables-basic' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--table text-xl"></i>
+                            <span class="menu-text">Tables</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='icons' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--icons text-xl"></i>
+                            <span class="menu-text">Icons</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{% url 'pages:dynamic_pages' template_name='charts-apex' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--chart-pie text-xl"></i>
+                            <span class="menu-text">Chart</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item hs-accordion">
+                        <a
+                            href="javascript:void(0)"
+                            class="hs-accordion-toggle group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5 hs-accordion-active:bg-default-900/5 hs-accordion-active:text-default-900"
+                        >
+                            <span class="iconify tabler--list text-xl"></span>
+                            <span class="menu-text">Level</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+
+                        <div id="sidenavLevel" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+                            <ul class="mt-1 space-y-1">
+                                <li class="menu-item">
+                                    <a href="javascript: void(0)" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Item 1</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="javascript: void(0)" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                        <i class="menu-dot"></i>
+                                        <span class="menu-text">Item 2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0)" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                            <i class="iconify tabler--sparkles text-xl"></i>
+                            <span class="menu-text">Badge Items</span>
+                            <span class="ms-auto h-4 px-1 rounded inline-flex border border-dark/30 items-center justify-center text-xs font-semibold bg-dark/20 text-dark">Hot</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="upgrade-alert" class="my-10 mx-3 hs-removing:translate-y-5 hs-removing:opacity-0 transition duration-300">
+                    <div class="relative p-6 rounded-lg bg-linear-to-br from-primary/10 to-indigo-500/10 text-center">
+                        <!-- Close button (top-right) -->
+                        <button data-hs-remove-element="#upgrade-alert" type="button" class="absolute top-2 end-2 size-6 rounded bg-primary/10 text-primary flex items-center justify-center">
+                            <i class="iconify tabler--x text-sm"></i>
+                        </button>
+
+                        <!-- Icon -->
+                        <div class="flex justify-center mb-4">
+                            <div class="flex items-center justify-center size-12 rounded-full bg-sky-500/15 text-sky-500">
+                                <i class="iconify tabler--sparkles text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <h5 class="mb-2 text-base font-semibold text-default-800">Unlock More Power</h5>
+
+                        <p class="mb-4 text-sm text-default-500">Enable professional Grade reports and extended capabilities.</p>
+
+                        <!-- CTA -->
+                        <a href="javascript:void(0);" class="inline-flex items-center gap-1.5 px-4 py-1.5 text-sm font-semibold rounded bg-secondary text-white hover:bg-secondary/90 transition-all">
+                            <i class="iconify tabler--arrow-up-right text-base"></i>
+                            Upgrade
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<!-- End Sidebar -->

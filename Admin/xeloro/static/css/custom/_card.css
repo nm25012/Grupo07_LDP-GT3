@@ -1,0 +1,35 @@
+/* _card.scss */
+
+@layer components {
+
+    .card {
+        @apply relative rounded-lg bg-white flex flex-col bg-clip-border h-fit border border-default-100 shadow shadow-default-900/2;
+
+
+        .card-header {
+            @apply py-3 px-6 border-b border-default-100 flex items-center justify-between;
+        }
+
+        .card-footer {
+            @apply py-3 px-6 border-t border-default-100;
+        }
+
+        .card-body {
+            @apply p-5;
+        }
+    }
+
+    .card-title {
+        @apply text-base font-medium text-default-800;
+    }
+
+    .scroll-layer {
+        position: relative;
+    }
+
+    .scroll-layer::after {
+        content: "";
+        @apply absolute bottom-0 start-0 opacity-80 h-17 w-full pointer-events-none bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#ffffff_63.79%)];
+    }
+
+}
