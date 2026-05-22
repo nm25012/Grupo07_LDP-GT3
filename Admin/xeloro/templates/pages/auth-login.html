@@ -3,7 +3,7 @@
     <div class="card">
         <div class="px-6 py-8">
             <div class="flex justify-between items-start mb-8">
-                <a class="flex items-center gap-2" href="/">
+                <a class="flex items-center gap-2" href="{% url 'pages:root' %}">
                     <div class="size-7 rounded-full flex items-center justify-center text-primary ring ring-primary">
                         <i class="iconify tabler--circle-dot-filled size-6.5"></i>
                     </div>
@@ -11,13 +11,14 @@
                 </a>
                 <h5 class="text-xl font-semibold text-default-700">Login</h5>
             </div>
+            <form id="login-form" action="{% url 'pages:dashboard' %}" method="get" novalidate>
             <div class="mb-4">
                 <label class="flex font-semibold text-base mb-2" for="EmailAddress">Email Address</label>
-                <input class="form-input font-normal rounded block w-full border-default-100 text-sm focus:border-default-100 focus:ring-0 bg-white" id="EmailAddress" placeholder="Enter your email" type="email" />
+                <input class="form-input font-normal rounded block w-full border-default-100 text-sm focus:border-default-100 focus:ring-0 bg-white" id="EmailAddress" name="email" placeholder="Enter your email" type="email" required />
             </div>
             <div class="mb-4">
                 <label class="flex font-semibold text-base mb-2" for="Password">Password</label>
-                <input class="form-input font-normal rounded block w-full border-default-100 text-sm focus:border-default-100 focus:ring-0 bg-white" id="Password" placeholder="Enter your password" type="password" />
+                <input class="form-input font-normal rounded block w-full border-default-100 text-sm focus:border-default-100 focus:ring-0 bg-white" id="Password" name="password" placeholder="Enter your password" type="password" required />
             </div>
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center">
@@ -27,8 +28,9 @@
                 <a class="text-sm text-primary border-b border-dashed border-primary" href="{% url 'pages:dynamic_pages' template_name='auth-recoverpw' %}">Forget Password ?</a>
             </div>
             <div class="flex justify-center mb-6">
-                <button class="inline-flex items-center justify-center rounded py-1.5 px-3 text-sm font-semibold transition-all w-full text-white bg-primary">Log In</button>
+                <button type="submit" class="inline-flex items-center justify-center rounded py-1.5 px-3 text-sm font-semibold transition-all w-full text-white bg-primary">Log In</button>
             </div>
+            </form>
             <div class="flex items-center my-6">
                 <div class="flex-auto mt-px border-t border-dashed border-default-200"></div>
                 <div class="mx-4 text-secondary">Or</div>
@@ -56,4 +58,11 @@
         </div>
     </div>
 </div>
-{% endblock content %} {% block scripts %} {% endblock scripts %}
+{% endblock content %} {% block scripts %}
+<script>
+    document.getElementById('login-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        window.location.href = '{% url "pages:dashboard" %}';
+    });
+</script>
+{% endblock scripts %}

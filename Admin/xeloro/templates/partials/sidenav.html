@@ -7,7 +7,7 @@
     <div class="flex flex-col h-full">
         <!-- Sidenav Logo -->
         <div class="sticky top-0 flex min-h-topbar items-center justify-start px-5">
-            <a href="/" class="flex items-center gap-2">
+            <a href="{% url 'pages:dashboard' %}" class="flex items-center gap-2">
                 <!-- Add your logo image here (recommended size: 28×28) -->
                 <!-- <img src="{% static 'images/logo.png' %}" alt="Xeloro Logo" class="size-7 rounded-full"> -->
 
@@ -29,7 +29,7 @@
                     </li>
 
                     <li class="menu-item">
-                        <a href="/" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                        <a href="{% url 'pages:dashboard' %}" class="group flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
                             <i class="iconify tabler--chart-bar text-xl"></i>
                             <span>Dashboard</span>
                             <span class="ms-auto size-4 rounded inline-flex border border-danger/30 items-center justify-center text-xs font-semibold bg-danger/20 text-danger">7</span>
@@ -89,7 +89,7 @@
                         <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
                             <ul class="mt-1 space-y-1">
                                 <li class="menu-item">
-                                    <a href="{% url 'pages:dynamic_pages' template_name='auth-login' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
+                                    <a href="{% url 'pages:root' %}" class="flex items-center gap-x-2 rounded-md px-3 py-2 text-sm font-medium text-default-600 transition-all hover:bg-default-900/5">
                                         <i class="menu-dot"></i>
                                         <span class="menu-text">Login</span>
                                     </a>

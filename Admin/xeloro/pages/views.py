@@ -2,6 +2,13 @@ from django.shortcuts import render
 from django.template import TemplateDoesNotExist
 def root_page_view(request):
     try:
+        return render(request, 'pages/auth-login.html')
+    except TemplateDoesNotExist:
+        return render(request, '404.html')
+
+
+def dashboard_page_view(request):
+    try:
         return render(request, 'pages/index.html')
     except TemplateDoesNotExist:
         return render(request, '404.html')
