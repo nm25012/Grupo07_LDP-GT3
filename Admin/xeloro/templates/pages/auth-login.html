@@ -1,15 +1,15 @@
-{% extends 'layouts/base.html' %} {% load static i18n %} {% block title %}Login{% endblock title %} {% block body_attribute %} class="h-screen w-screen flex justify-center items-center relative" {% endblock body_attribute %} {% block content %}
-<div class="xl:w-1/4 md:w-3/4 w-full m-8 whitespace-nowrap">
+{% extends 'layouts/base.html' %} {% load static i18n %} {% block title %}Login | Cinema{% endblock title %} {% block body_attribute %} class="h-screen w-screen flex justify-center items-center relative" {% endblock body_attribute %} {% block content %}
+<div class="xl:w-1/4 md:w-3/4 w-full m-8">
     <div class="card">
         <div class="px-6 py-8">
-            <div class="flex justify-between items-start mb-8">
-                <a class="flex items-center gap-2" href="{% url 'pages:root' %}">
-                    <div class="size-7 rounded-full flex items-center justify-center text-primary ring ring-primary">
-                        <i class="iconify tabler--circle-dot-filled size-6.5"></i>
+            <div class="flex flex-col items-center text-center mb-8">
+                <a class="flex flex-col items-center gap-3" href="{% url 'pages:root' %}">
+                    <div class="size-12 rounded-full flex items-center justify-center text-primary ring-2 ring-primary">
+                        <i class="iconify tabler--circle-dot-filled size-8"></i>
                     </div>
-                    <span class="font-black text-2xl/none text-default-800 uppercase tracking-wider"></span>
+                    <span class="font-black text-3xl/none text-default-800 uppercase tracking-widest">Cinema</span>
                 </a>
-                <h5 class="text-xl font-semibold text-default-700">Login</h5>
+                <h5 class="text-xl font-semibold text-default-700 mt-4">Login</h5>
             </div>
             <form id="login-form" action="{% url 'pages:dashboard' %}" method="get" novalidate>
             <div class="mb-4">
