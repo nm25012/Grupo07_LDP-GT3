@@ -1,0 +1,24 @@
+{% extends 'layouts/vertical.html' %}
+{% load static i18n crispy_forms_tags %}
+{% block title %}{{ titulo }}{% endblock title %}
+{% block page_content %}
+{% include 'partials/page-title.html' with subtitle='Cine' title=titulo %}
+
+<div class="mt-8">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">{{ titulo }}</h4>
+        </div>
+        <div class="p-4">
+            <form method="post" class="space-y-4">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="flex justify-end gap-2 mt-4">
+                    <button type="button" onclick="window.history.back()" class="btn bg-default-200 text-default-800">Cancelar</button>
+                    <button type="submit" class="btn bg-primary text-white">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock page_content %}

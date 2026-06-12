@@ -12,6 +12,7 @@ urlpatterns = [
     # User management
     path("users/", include("xeloro.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
+    path("cine/", include("xeloro.cine.urls", namespace="cine")),
     path("", include("xeloro.pages.urls", namespace="pages")),
 
     # Media files

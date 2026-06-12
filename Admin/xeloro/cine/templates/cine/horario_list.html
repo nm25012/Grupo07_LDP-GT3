@@ -1,0 +1,48 @@
+{% extends 'layouts/vertical.html' %}
+{% load static i18n %}
+{% block title %}Horarios{% endblock title %}
+{% block page_content %}
+{% include 'partials/page-title.html' with subtitle='Cine' title='Horarios' %}
+
+<div class="mt-8">
+    <div class="card">
+        <div class="card-header flex justify-between items-center">
+            <h4 class="card-title">Listado de Horarios</h4>
+            <a href="{% url 'cine:horario-create' %}" class="btn bg-primary text-white">Nuevo Horario</a>
+        </div>
+        <div class="p-4">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-default-100">
+                    <thead>
+                        <tr>
+                            <th class="px-6 py-3 text-start text-sm text-default-500">Película</th>
+                            <th class="px-6 py-3 text-start text-sm text-default-500">Sala</th>
+                            <th class="px-6 py-3 text-start text-sm text-default-500">Fecha y Hora</th>
+                            <th class="px-6 py-3 text-start text-sm text-default-500">Precio</th>
+                            <th class="px-6 py-3 text-end text-sm text-default-500">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-default-100">
+                        {% for horario in horarios %}
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-default-800">{{ horario.pelicula.titulo }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-default-800">{{ horario.sala.nombre }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-default-800">{{ horario.fecha_hora|date:"d/m/Y H:i" }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-default-800">${{ horario.precio }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                <a class="text-primary hover:text-primary-700 me-2" href="{% url 'cine:horario-update' horario.pk %}">Editar</a>
+                                <a class="text-danger hover:text-danger-700" href="{% url 'cine:horario-delete' horario.pk %}">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="px-6 py-4 text-center text-sm text-default-500">No hay horarios registrados.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock page_content %}

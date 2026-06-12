@@ -1,0 +1,48 @@
+{% extends 'layouts/vertical.html' %}
+{% load static i18n %}
+{% block title %}Películas{% endblock title %}
+{% block page_content %}
+{% include 'partials/page-title.html' with subtitle='Cine' title='Películas' %}
+
+<div class="mt-8">
+    <div class="card">
+        <div class="card-header flex justify-between items-center">
+            <h4 class="card-title">Listado de Películas</h4>
+            <a href="{% url 'cine:pelicula-create' %}" class="btn bg-primary text-white">Nueva Película</a>
+        </div>
+        <div class="p-4">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-default-100">
+                    <thead>
+                        <tr>
+                            <th class="px-6 py-3 text-start text-sm text-default-500">Título</th>
+                            <th class="px-6 py-3 text-start text-sm text-default-500">Género</th>
+                            <th class="px-6 py-3 text-start text-sm text-default-500">Duración</th>
+                            <th class="px-6 py-3 text-start text-sm text-default-500">Activa</th>
+                            <th class="px-6 py-3 text-end text-sm text-default-500">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-default-100">
+                        {% for pelicula in peliculas %}
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-default-800">{{ pelicula.titulo }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-default-800">{{ pelicula.genero }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-default-800">{{ pelicula.duracion }} min</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-default-800">{{ pelicula.activa|yesno:"Sí,No" }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+                                <a class="text-primary hover:text-primary-700 me-2" href="{% url 'cine:pelicula-update' pelicula.pk %}">Editar</a>
+                                <a class="text-danger hover:text-danger-700" href="{% url 'cine:pelicula-delete' pelicula.pk %}">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="px-6 py-4 text-center text-sm text-default-500">No hay películas registradas.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock page_content %}

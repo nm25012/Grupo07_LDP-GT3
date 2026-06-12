@@ -1,0 +1,25 @@
+{% extends 'layouts/vertical.html' %}
+{% load static i18n %}
+{% block title %}{{ titulo }}{% endblock title %}
+{% block page_content %}
+{% include 'partials/page-title.html' with subtitle='Cine' title=titulo %}
+
+<div class="mt-8">
+    <div class="card border-danger/30">
+        <div class="card-header bg-danger/10 text-danger">
+            <h4 class="card-title">{{ titulo }}</h4>
+        </div>
+        <div class="p-4">
+            <p class="text-default-800 mb-4">¿Estás seguro de que deseas eliminar este registro ({{ entidad }})? Esta acción no se puede deshacer.</p>
+            <p class="font-bold text-lg mb-6">{{ object }}</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="flex justify-end gap-2">
+                    <button type="button" onclick="window.history.back()" class="btn bg-default-200 text-default-800">Cancelar</button>
+                    <button type="submit" class="btn bg-danger text-white">Sí, eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock page_content %}
